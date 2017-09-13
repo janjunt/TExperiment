@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Contents/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" />
+    @RenderSection("HeaderSection", false)
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <script src="~/Contents/assets/js/jquery-3.2.1.js"></script>
+    <script src="~/Contents/assets/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <script src="~/Contents/assets/js/doT.js"></script>
+    @RenderSection("FooterSection", false)
+</body>
+</html>

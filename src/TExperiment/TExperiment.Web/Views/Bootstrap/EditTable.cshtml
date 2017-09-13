@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "EditTable";
+}
+<table id="data_table" class="table table-striped table-bordered table-hover" style="table-layout:fixed;"> 
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>职业</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+</table>
+@section FooterSection{
+<script src="~/Contents/js/editTable.js"></script>
+<script>
+    $(function () {
+        'use strict';
+
+        function bindEvents() {
+            $('#data_table').editTable({
+                'fields': [{
+                    'name': 'name'
+                }, {
+                    'name': 'career'
+                }],
+                'data': [{
+                    'name': '张三',
+                    'career': '程序员'
+                }]
+            });
+        }
+
+        bindEvents();
+    });
+</script>
+}
