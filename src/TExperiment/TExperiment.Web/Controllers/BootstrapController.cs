@@ -4,8 +4,12 @@ namespace TExperiment.Web.Controllers
 {
     public class BootstrapController : Controller
     {
-        // GET: Bootstrap
         public ActionResult EditTable()
+        {
+            return View();
+        }
+
+        public ActionResult Tooltip()
         {
             return View();
         }

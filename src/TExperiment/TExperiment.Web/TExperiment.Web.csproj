@@ -117,6 +117,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Bootstrap\EditTable.cshtml" />
+    <Content Include="Views\Bootstrap\Tooltip.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

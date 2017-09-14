@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "EditTable";
+}
+<button id="btn" type="button" class="btn btn-default">测试</button>
+@section FooterSection{
+    <script src="~/Contents/js/editTable.js"></script>
+    <script>
+    $(function () {
+        'use strict';
+
+        $('#btn').tooltip({
+            'title': '测试',
+            'trigger': 'manual',
+            'placement':'auto top'
+        }).tooltip('show');
+    });
+    </script>
+}
