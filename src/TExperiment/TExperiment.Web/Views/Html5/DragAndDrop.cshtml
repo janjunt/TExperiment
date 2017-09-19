@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Html5拖放";
+}
+<table style="width:100%;border:1px solid #ccc;">
+    <tr id="row">
+        <td id="td1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">1</td>
+        <td id="td2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">2</td>
+        <td id="td3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">3</td>
+    </tr>
+</table>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("id", ev.target.id);
+        ev.dataTransfer.setData("index", getIndex(ev.target));
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("id");
+        var index = ev.dataTransfer.getData("index");
+        var newIndex = getIndex(ev.target);
+        if (newIndex < index) {
+            document.getElementById('row').insertBefore(document.getElementById(data), ev.target);
+        } else if (newIndex > index) {
+            if (document.getElementById('row').childNodes.length === newIndex + 1) {
+                document.getElementById('row').appendChild(ev.target);
+            } else {
+                document.getElementById('row').insertBefore(document.getElementById(data), document.getElementById('row').childNodes[newIndex + 1]);
+            }
+        }
+    }
+
+    function getIndex(td) {
+        var tds = document.getElementById('row').childNodes;
+        for (var i = 0; i < tds.length; i++) {
+            if (td === tds[i]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+</script>

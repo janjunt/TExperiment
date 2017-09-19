@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
+    <Compile Include="Controllers\Html5Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -118,6 +119,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Bootstrap\EditTable.cshtml" />
     <Content Include="Views\Bootstrap\Tooltip.cshtml" />
+    <Content Include="Views\Html5\DragAndDrop.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
