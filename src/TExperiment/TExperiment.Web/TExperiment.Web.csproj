@@ -94,12 +94,18 @@
     <Content Include="Contents\assets\bootstrap-3.3.7\js\bootstrap.js" />
     <Content Include="Contents\assets\js\doT.js" />
     <Content Include="Contents\assets\js\jquery-3.2.1.js" />
+    <Content Include="Contents\assets\js\lodash.js" />
+    <Content Include="Contents\assets\js\require.js" />
+    <Content Include="Contents\assets\js\vue.js" />
     <Content Include="Contents\js\editTable.js" />
+    <Content Include="Contents\js\pages\esmodule-vue-nestedloop.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\EsModule\Controllers\VueController.cs" />
+    <Compile Include="Areas\EsModule\EsModuleAreaRegistration.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
     <Compile Include="Controllers\Html5Controller.cs" />
     <Compile Include="Global.asax.cs">
@@ -114,6 +120,10 @@
     <Content Include="Contents\assets\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Contents\assets\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Contents\assets\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\EsModule\Views\web.config" />
+    <Content Include="Areas\EsModule\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\EsModule\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\EsModule\Views\Vue\NestedLoop.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -129,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\EsModule\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "循环嵌套";
+}
+<div id="app">
+    <table class="table table-striped table-bordered table-hover">
+        <tbody>
+            <template v-for="(innerList,key) of list">
+                <tr v-for="(item,index) in innerList">
+                    <td v-if="index===0" v-bind:rowspan="innerList.length">{{key}}</td>
+                    <td>{{item.name}}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</div>
+@section FooterSection{
+<script src="~/Contents/assets/js/require.js" data-main="/Contents/js/pages/esmodule-vue-nestedloop" defer async="true"></script>
+}
