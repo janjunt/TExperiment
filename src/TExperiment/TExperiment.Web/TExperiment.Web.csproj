@@ -48,6 +48,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -107,6 +110,7 @@
     <Compile Include="Areas\EsModule\Controllers\VueController.cs" />
     <Compile Include="Areas\EsModule\EsModuleAreaRegistration.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
+    <Compile Include="Controllers\ExcelController.cs" />
     <Compile Include="Controllers\Html5Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -124,12 +128,14 @@
     <Content Include="Areas\EsModule\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\EsModule\Views\_ViewStart.cshtml" />
     <Content Include="Areas\EsModule\Views\Vue\NestedLoop.cshtml" />
+    <Content Include="App_Data\Templates\template.xlsx" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Bootstrap\EditTable.cshtml" />
     <Content Include="Views\Bootstrap\Tooltip.cshtml" />
     <Content Include="Views\Html5\DragAndDrop.cshtml" />
+    <Content Include="Views\Excel\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,9 +144,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\EsModule\Models\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TExperiment.Excel\TExperiment.Excel.csproj">
+      <Project>{379c05ad-edbc-43f9-b372-56b632597a39}</Project>
+      <Name>TExperiment.Excel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
