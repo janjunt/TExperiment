@@ -8,10 +8,11 @@
         /// <summary>
         /// 水平方向重复
         /// </summary>
-        X,
+        X = 0,
+
         /// <summary>
         /// 垂直方向重复
         /// </summary>
-        Y,
+        Y = 1,
     }
 }

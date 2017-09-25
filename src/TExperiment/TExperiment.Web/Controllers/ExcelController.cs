@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using TExperiment.Excel.Loaders;
+using TExperiment.Excel.Exports;
 
 namespace TExperiment.Web.Controllers
 {
@@ -8,9 +8,7 @@ namespace TExperiment.Web.Controllers
         // GET: Excel
         public ActionResult Index()
         {
-            var loader = new TemplateRenderLoader();
-            var desc = loader.Load(Server.MapPath("~/App_Data/Templates/template.xlsx"));
-            return View(desc);
+            return File(ExcelExport.ExportToBuffer(Server.MapPath("~/App_Data/Templates/template.xlsx"), new object()), "application/vnd.ms-excel", "test.xlsx");
         }
     }
 }

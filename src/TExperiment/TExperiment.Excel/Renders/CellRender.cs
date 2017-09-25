@@ -1,6 +1,9 @@
-﻿namespace TExperiment.Excel.Renders
+﻿using TExperiment.Excel.Models;
+
+namespace TExperiment.Excel.Renders
 {
-    public class CellRender:Render
+    public class CellRender:RenderBase
     {
+        public CellLocation Cell { get; set; }
     }
 }

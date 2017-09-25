@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{379C05AD-EDBC-43F9-B372-56B632597A39}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TExperiment.Excel</RootNamespace>
-    <AssemblyName>TExperiment.Excel</AssemblyName>
+    <ProjectGuid>{1914DCBD-3579-4944-A792-C687E2D9207E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TExperiment.Console</RootNamespace>
+    <AssemblyName>TExperiment.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -55,28 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\DescriptorBuilder.cs" />
-    <Compile Include="Builders\RenderBuilder.cs" />
-    <Compile Include="Renders\RenderContext.cs" />
-    <Compile Include="Exports\ExcelExport.cs" />
-    <Compile Include="Exports\TemplateExport.cs" />
-    <Compile Include="Models\CellLocation.cs" />
-    <Compile Include="Models\CellRange.cs" />
-    <Compile Include="Models\FilterCondition.cs" />
-    <Compile Include="Descriptor\ParameterDescriptor.cs" />
-    <Compile Include="Models\RepeatType.cs" />
-    <Compile Include="Descriptor\SheetDescriptor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renders\CellNodeRender.cs" />
-    <Compile Include="Renders\CellRender.cs" />
-    <Compile Include="Renders\IRender.cs" />
-    <Compile Include="Renders\RenderBase.cs" />
-    <Compile Include="Renders\RepeatRender.cs" />
-    <Compile Include="Renders\SheetRender.cs" />
-    <Compile Include="Utility\NpoiUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TExperiment.Excel\TExperiment.Excel.csproj">
+      <Project>{379c05ad-edbc-43f9-b372-56b632597a39}</Project>
+      <Name>TExperiment.Excel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

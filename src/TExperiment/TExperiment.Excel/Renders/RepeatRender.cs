@@ -1,24 +1,28 @@
-﻿using TExperiment.Excel.Models;
+﻿using System.Collections;
+using TExperiment.Excel.Builders;
+using TExperiment.Excel.Models;
 
 namespace TExperiment.Excel.Renders
 {
-    public class RepeatRender:Render
+    public class RepeatRender: RenderBase
     {
         /// <summary>
-        /// 起始单元格
+        /// 重复范围
         /// </summary>
-        public CellLocation StartCell { get; set; }
-        /// <summary>
-        /// 终止单元格
-        /// </summary>
-        public CellLocation EndCell { get; set; }
+        public CellRange Range { get; set; }
+
         /// <summary>
         /// 重复类型
         /// </summary>
         public RepeatType Repeat { get; set; }
 
-        public RepeatRender()
+        public override void Render(RenderContext context)
         {
+            var list = context.GetValue(Name) as IEnumerable;
+            foreach (var item in list)
+            {
+                base.Render(context.CreateChildContext(item));
+            }
         }
     }
 }
